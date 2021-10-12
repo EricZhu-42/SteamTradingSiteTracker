@@ -1,3 +1,5 @@
+![](./titlepage.png)
+
 # SteamTradingSiteTracker
 
 Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 挂刀比例数据
