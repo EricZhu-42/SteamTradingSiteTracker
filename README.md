@@ -8,7 +8,9 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 挂刀比例数
 
 目前 Web 服务器架设在香港，大部分地区可以正常访问。如站点无法连接 (e.g., `ERR_CONNECTION_RESET`)，请更换网络环境后重试。
 
-**24小时持续更新物品比例数据**，受服务器成本限制，目前仅追踪 **BUFF & IGXE & C5** 三个主要平台 售价 1 ~ 500 元，平台比例低于 1.54 的 **CSGO & DOTA2** 饰品皮肤（具体筛选规则由[数据分析](https://github.com/EricZhu-42/SteamTradingSiteTracker/blob/main/SteamBuffSnapshot/demo.ipynb)得到；列表动态更新，当前约 13000 个）。目前重点物品数据约 1.5h 完整更新一次，后期可能进一步提高更新频率。
+**24小时持续更新物品比例数据**，受服务器成本限制，目前仅追踪 **BUFF & IGXE & C5** 三个主要平台 售价 1 ~ 500 元，平台比例低于 1.54 的 **CSGO & DOTA2** 饰品皮肤（具体筛选规则来自[数据分析](https://github.com/EricZhu-42/SteamTradingSiteTracker/blob/main/SteamBuffSnapshot/demo.ipynb)；列表动态更新，当前约 13000 个）。
+
+目前重点物品数据约 1.5h 完整更新一次，后期可能进一步提高更新频率。
 
 为了服务器的正常运行，请不要在短时间内连续访问站点。
 
