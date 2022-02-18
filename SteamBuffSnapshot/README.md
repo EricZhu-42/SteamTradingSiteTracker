@@ -13,7 +13,7 @@
 
 ## 数据字段说明
 
-每条数据有四个字段：'buff_meta', 'buff_order', 'steam_volume', 'steam_order'
+每条数据有四个字段：`buff_meta`, `buff_order`, `steam_volume`, `steam_order`
 
 - `buff_meta`: 饰品在 BUFF 平台的基本信息，来自 `buff.163.com/api/market/goods` 接口，包含两个额外字段：`market_id` （物品在 Steam Market 对应的唯一 id） 与 `updated_at`（数据获取时刻的 timestamp，下同）
 - `buff_order`: 饰品在 BUFF 平台的出售订单信息，来自 `buff.163.com/api/market/goods/sell_order` 接口，**仅包含第一页数据**
