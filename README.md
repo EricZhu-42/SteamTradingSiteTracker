@@ -18,9 +18,13 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 挂刀比例数
 
 为了服务器的正常运行，请不要在短时间内连续访问站点。
 
+## 代码
+
+**饰品数据更新**相关的[代码](https://github.com/EricZhu-42/SteamTradingSiteTracker/tree/main/scripts)已开源。
+
 ## 数据集
 
-为了获得最优的饰品筛选规则，以获得包含尽可能多低比例饰品且尽量小的饰品追踪列表，本项目构造并开源了 [SteamBuffSnapshot](https://github.com/EricZhu-42/SteamTradingSiteTracker/tree/main/SteamBuffSnapshot) 数据集。
+为了获得最优的饰品筛选规则，以获得包含尽可能多低比例饰品且尽量小的饰品追踪列表，本项目构造了 [SteamBuffSnapshot](https://github.com/EricZhu-42/SteamTradingSiteTracker/tree/main/SteamBuffSnapshot) 数据集。
 
 该数据集包含了 2022 年 2 月 14 日 BUFF 平台 dota2 与 csgo 所有饰品的价格数据与对应的 Steam Market 数据，共计 **38075** 条。
 
