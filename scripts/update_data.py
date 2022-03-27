@@ -281,9 +281,8 @@ if __name__ == '__main__':
         num_items = len(curr_valid)
         group_size_list   = [floor(0.01*num_items), floor(0.04*num_items), floor(0.05*num_items), floor(0.1*num_items), floor(0.3*num_items), floor(0.5*num_items)]
         group_weight_list = [40,                    20,                    6,                     4,                    2,                    1,                  ]
-        group_slice_list  = [(0, group_size_list[0]), (group_size_list[1], group_size_list[2]), (group_size_list[2], group_size_list[3]),
-                            (group_size_list[3], group_size_list[4]), (group_size_list[4], group_size_list[5]), (group_size_list[5], num_items)]
-        assert len(group_size_list) == len(group_size_list) == len(group_slice_list) == 6
+        group_slice_list  = [(sum(group_size_list[:i]), sum(group_size_list[:i+1])) for i in range(len(group_size_list))]
+        assert len(group_size_list) == len(group_size_list) == len(group_slice_list)
         group_weighted_size = np.array([s*w for s, w in zip(group_size_list, group_weight_list)])
         group_proba = group_weighted_size / group_weighted_size.sum()
 
