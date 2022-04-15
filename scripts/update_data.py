@@ -141,6 +141,7 @@ def update_item(item:dict, group:int=-1, use_proxy:bool=False):
     game = item['game']
     appid = item['appid']
     quick_price = item['buff_reference_price']
+    age = time.time() - item.get('updated_at', 0)
 
     # update steam trade volume
     volume_data = get_volume_data(hash_name, appid)
@@ -154,7 +155,7 @@ def update_item(item:dict, group:int=-1, use_proxy:bool=False):
         item['updated_at'] = int(time.time())
         proc_storage.update_item(item)
         proc_storage.close()
-        logger.info("ignore item {:s} for low volume", hash_name)
+        logger.info("ignore item {:s} for low volume with age {:.2f} hours", hash_name, age / 3600)
         return
 
     # update buff order
@@ -241,7 +242,7 @@ def update_item(item:dict, group:int=-1, use_proxy:bool=False):
     if elapsed < MIN_INTERVAL_PER_PROCESS:
         time.sleep(MIN_INTERVAL_PER_PROCESS - elapsed)
 
-    logger.info("Update item {:s} in group {:d}, time elapsed {:.2f}", hash_name, group, time.time() - start)
+    logger.info("Update item {:s} in group {:d}, age {:.2f} hours, time elapsed {:.2f}", hash_name, group, age / 3600, time.time() - start)
 
 def safe_update_item(*a, **k):
     try:
