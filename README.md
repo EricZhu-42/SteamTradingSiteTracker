@@ -28,6 +28,12 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 挂刀比例数
 
 该数据集包含了 2022 年 2 月 14 日 BUFF 平台 dota2 与 csgo 所有饰品的价格数据与对应的 Steam Market 数据，共计 **38075** 条。
 
+## Data Dumps
+
+从 2022/4/25 起，可以在 [DataDumps](https://github.com/EricZhu-42/SteamTradingSiteTracker/tree/main/DataDumps) 目录下获取 7 天前的 DATA 数据库的完整内容。
+
+Data dumps 将作为 _SteamBuffSnapshot_ 数据集的补充，便于开发者在更长的时间周期内进行数据分析。
+
 ## 开发计划
 
 ### 数据更新
