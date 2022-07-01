@@ -22,6 +22,9 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 挂刀比例数
 
 **饰品数据更新**相关的[代码](https://github.com/EricZhu-42/SteamTradingSiteTracker/tree/main/scripts)已开源。
 
+## 数据仓库
+为了方便在主仓库上的 clone, watch 等操作，与数据集相关的文件自 2022/07/01 起被迁移至独立的[数据仓库](https://github.com/EricZhu-42/SteamTradingSiteTracker-Data)。
+
 ## 数据集
 
 为了获得最优的饰品筛选规则，以获得包含尽可能多低比例饰品且尽量小的饰品追踪列表，本项目构造了 [SteamBuffSnapshot](https://github.com/EricZhu-42/SteamTradingSiteTracker-Data/tree/main/SteamBuffSnapshot) 数据集。
