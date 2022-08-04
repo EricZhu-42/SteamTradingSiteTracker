@@ -84,7 +84,7 @@ def get_igxe_id(game:str, name:str):
         logger.warning("Find invalid igxe name in {} ({} candidates)", r.url, len(candidates))
         return 0
 
-@retry(stop_max_attempt_number=1, wait_fixed=10000)
+@retry(stop_max_attempt_number=2, wait_fixed=2000)
 def get_c5_id(game:str, name:str):
     url_fmt = c5_csgo_search_page_fmt if game=='csgo' else c5_dota_search_page_fmt
 

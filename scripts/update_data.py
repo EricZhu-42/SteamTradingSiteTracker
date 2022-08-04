@@ -102,6 +102,8 @@ def get_igxe_data(igxe_id:int, appid, use_proxy=False):
         proxies = asian_proxies
 
     r = requests.get(igxe_json_fmt.format(igxe_id=igxe_id, appid=appid), timeout=10, proxies=proxies)
+    if r.status_code == 404: 
+        return None
     assert r.status_code == 200, "Failed to get item with igxe_id @ 1: " + str(igxe_id) + " with code: " + str(r.status_code)
 
     igxe_data = r.json()
@@ -109,7 +111,7 @@ def get_igxe_data(igxe_id:int, appid, use_proxy=False):
 
     return igxe_data
 
-@retry(stop_max_attempt_number=2, wait_random_min=5000, wait_random_max=10000)
+# @retry(stop_max_attempt_number=2, wait_random_min=10000, wait_random_max=10000)
 def get_c5_data(c5_id:int, use_proxy=False):
     """
         traffic: 27 KB
@@ -177,7 +179,7 @@ def update_item(item:dict, group:int=-1, use_proxy:bool=False):
     # update c5 order; c5 page not exist if c5_id == 0
     item['c5_sell_list'] = []
     if c5_id:
-        c5_data = get_c5_data(c5_id, use_proxy)
+        c5_data = get_c5_data(c5_id, True)
         if c5_data:
             item['c5_sell_list'] = [(eval(order['price']), None, None) for order in c5_data['data']['list']]
 
