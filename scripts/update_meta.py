@@ -9,9 +9,8 @@ from loguru import logger
 from retrying import retry
 
 from database import MongoDB
-from url_formats import (buff_index_json_fmt, c5_csgo_search_page_fmt,
-                         c5_dota_search_page_fmt, igxe_search_page_fmt,
-                         steam_item_page_fmt)
+from url_formats import (buff_index_json_fmt, c5_search_page_fmt,
+                         igxe_search_page_fmt, steam_item_page_fmt)
 from utils import asian_proxies, default_header, random_delay
 
 logger.add('../log/update_meta.log', enqueue=True, rotation='1 MB', backtrace=True, diagnose=True)
@@ -86,22 +85,18 @@ def get_igxe_id(game:str, name:str):
 
 @retry(stop_max_attempt_number=2, wait_fixed=2000)
 def get_c5_id(game:str, name:str):
-    url_fmt = c5_csgo_search_page_fmt if game=='csgo' else c5_dota_search_page_fmt
 
-    r = requests.get(url_fmt.format(name=urllib.parse.quote(name)), headers=headers, timeout=20, proxies=asian_proxies) # always use proxy
+    r = requests.get(c5_search_page_fmt.format(name=name, game=game), headers=headers, timeout=20, proxies=asian_proxies) # always use proxy
     assert r.status_code == 200, "Falied to get c5 id of " + name + " with code: " + str(r.status_code)
 
+    c5_id = 0
+    
     # prase html
     soup = BeautifulSoup(r.text, 'html.parser')
-    data_list = soup.find_all(class_='search-right')
-    assert len(data_list) == 1, "unmatched data list"
-
-    c5_id = 0
-    for a in data_list[0].find_all(class_="selling"):
-        name_element = a.find(class_='name')
-        if name_element.text.strip() == name:
-            re_fmt = r'csgo/(\d+)/S' if game == 'csgo' else r'item_id=(\d+)'
-            c5_id = eval(re.search(re_fmt, str(name_element)).group(1))
+    for div in soup.findAll('div', class_='el-col el-col-4'):
+        div_name = div.find(class_='ellipsis pointer mb10').text.strip()
+        if div_name == name:
+            c5_id = int(re.search('/(\d+)/', div.a['href']).group(1))
             break
 
     if not c5_id:
@@ -138,6 +133,7 @@ def update_once(game:str, appid:int, page_num:int):
         buff_id = item['id']
         name = item['name']
         hash_name = item['market_hash_name']
+        short_name = item['short_name']
 
         market_id = get_market_id(hash_name=hash_name, appid=appid)
         if market_id == 0:
@@ -164,6 +160,7 @@ def update_once(game:str, appid:int, page_num:int):
             'c5_id' : c5_id,
             'market_id' : market_id,
             'hash_name' : hash_name,
+            'short_name': short_name,
             'buff_ratio': buff_ratio,
             'buff_reference_price' : eval(item['sell_reference_price']),
             'buff_buy_num' : item['buy_num'],

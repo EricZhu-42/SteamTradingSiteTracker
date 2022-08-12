@@ -179,7 +179,7 @@ def update_item(item:dict, group:int=-1, use_proxy:bool=False):
     # update c5 order; c5 page not exist if c5_id == 0
     item['c5_sell_list'] = []
     if c5_id:
-        c5_data = get_c5_data(c5_id, True)
+        c5_data = get_c5_data(c5_id, use_proxy)
         if c5_data:
             item['c5_sell_list'] = [(eval(order['price']), None, None) for order in c5_data['data']['list']]
 
