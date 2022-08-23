@@ -12,7 +12,7 @@ from retrying import retry
 from database import MongoDB
 from url_formats import (buff_json_fmt, c5_json_fmt, igxe_json_fmt,
                          order_json_fmt, volume_json_fmt)
-from utils import asian_proxies, default_header, global_proxies, random_delay
+from utils import asian_proxies, default_header, global_proxies, random_delay, calculate_after_fee
 
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8' )
 logger.add('../log/update_data.log', enqueue=True, rotation='2 MB', backtrace=True, diagnose=True)
@@ -128,6 +128,7 @@ def get_c5_data(c5_id:int, use_proxy=False):
 
     return c5_data
 
+
 # ==== update an item ====
 def update_item(item:dict, group:int=-1, use_proxy:bool=False):
     """
@@ -209,9 +210,9 @@ def update_item(item:dict, group:int=-1, use_proxy:bool=False):
         optimal_buy_price_raw = item['buy_order_list'][0][0]
         optimal_sell_price_raw = item['sell_order_list'][0][0]
 
-        item['optimal_buy_price'] = optimal_buy_price_raw / 1.15
-        item['safe_buy_price'] = safe_buy_price_raw / 1.15
-        item['optimal_sell_price'] = optimal_sell_price_raw / 1.15
+        item['optimal_buy_price'] = calculate_after_fee(optimal_buy_price_raw)
+        item['safe_buy_price'] = calculate_after_fee(safe_buy_price_raw)
+        item['optimal_sell_price'] = calculate_after_fee(optimal_sell_price_raw)
         item['safe_sell_price'] = item['optimal_sell_price'] # just a placeholder; sell should not be safe
 
         # compute ratio
