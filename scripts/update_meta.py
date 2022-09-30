@@ -94,7 +94,7 @@ def get_c5_id(game:str, name:str):
     # prase html
     soup = BeautifulSoup(r.text, 'html.parser')
     for div in soup.findAll('div', class_='el-col el-col-4'):
-        div_name = div.find(class_='ellipsis pointer mb10').text.strip()
+        div_name = div.find(class_='ellipsis pointer li-btm-title mb10').text.strip()
         if div_name == name:
             c5_id = int(re.search('/(\d+)/', div.a['href']).group(1))
             break
