@@ -65,4 +65,5 @@ Data dumps 将作为 _SteamBuffSnapshot_ 数据集的补充，便于开发者在
 - [x] 支持 DOTA2
 - [x] 支持 IGXE
 - [x] 支持 C5
+- [] 支持 悠悠有品
 
