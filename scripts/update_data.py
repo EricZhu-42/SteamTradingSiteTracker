@@ -11,8 +11,9 @@ from retrying import retry
 
 from database import MongoDB
 from url_formats import (buff_json_fmt, c5_json_fmt, igxe_json_fmt,
-                         order_json_fmt, volume_json_fmt)
-from utils import asian_proxies, default_header, global_proxies, random_delay, calculate_after_fee
+                         order_json_fmt, uuyp_json_fmt, volume_json_fmt)
+from utils import (asian_proxies, calculate_after_fee, default_header,
+                   global_proxies, random_delay)
 
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8' )
 logger.add('../log/update_data.log', enqueue=True, rotation='2 MB', backtrace=True, diagnose=True)
@@ -27,7 +28,7 @@ SPEEDRUN_UPDATE_NUM = 600
 
 # ==== init ====
 headers = default_header.copy()
-platforms = ['buff', 'igxe', 'c5']
+platforms = ['buff', 'igxe', 'c5', 'uuyp']
 
 # ==== utils ====
 def parse_ratio(buy, sell_raw):
@@ -61,13 +62,13 @@ def get_volume_data(hash_name, appid):
 
     return volume_data
 
-@retry(stop_max_attempt_number=2, wait_fixed=500)
+@retry(stop_max_attempt_number=2, wait_fixed=0)
 def get_order_data(market_id):
     """
         always use proxy
         traffic: 2.75 KB
     """
-    r = requests.get(order_json_fmt.format(market_id=market_id), proxies=asian_proxies)
+    r = requests.get(order_json_fmt.format(market_id=market_id), proxies=global_proxies)
     assert r.status_code == 200, "Failed to get item with market_id @ 1: " + str(market_id) + " with code: " + str(r.status_code)
 
     volume_data = r.json()
@@ -111,6 +112,31 @@ def get_igxe_data(igxe_id:int, appid, use_proxy=False):
 
     return igxe_data
 
+@retry(stop_max_attempt_number=2, wait_random_min=5000, wait_random_max=10000)
+def get_uuyp_data(uuyp_id:int, use_proxy=False):
+    proxies = None
+    if use_proxy:
+        proxies = asian_proxies
+    
+    data = {
+        'listSortType': 1,
+        'listType': 10,
+        'pageIndex': 1,
+        'pageSize': 30,
+        'sortType': 1,
+        'templateId': str(uuyp_id)
+    }
+    r = requests.post(uuyp_json_fmt, json=data, timeout=10, proxies=proxies)
+    if r.status_code == 404:
+        return None
+    
+    assert r.status_code == 200, "Failed to get item with uuyp_id @ 1: " + str(uuyp_id) + " with code: " + str(r.status_code)
+
+    uuyp_data = r.json()
+    assert uuyp_data['Code'] == 0, "Failed to get item with uuyp_id @ 2: " + str(uuyp_id)
+
+    return uuyp_data
+
 # @retry(stop_max_attempt_number=2, wait_random_min=10000, wait_random_max=10000)
 def get_c5_data(c5_id:int, use_proxy=False):
     """
@@ -128,7 +154,6 @@ def get_c5_data(c5_id:int, use_proxy=False):
 
     return c5_data
 
-
 # ==== update an item ====
 def update_item(item:dict, group:int=-1, use_proxy:bool=False):
     """
@@ -139,6 +164,7 @@ def update_item(item:dict, group:int=-1, use_proxy:bool=False):
     buff_id = item['buff_id']
     igxe_id = item['igxe_id']
     c5_id = item['c5_id']
+    uuyp_id = item.get('uuyp_id', 0)
     market_id = item['market_id']
     hash_name = item['hash_name']
     game = item['game']
@@ -183,6 +209,14 @@ def update_item(item:dict, group:int=-1, use_proxy:bool=False):
         c5_data = get_c5_data(c5_id, use_proxy)
         if c5_data:
             item['c5_sell_list'] = [(eval(order['price']), None, None) for order in c5_data['data']['list']]
+    
+    # update uuyp order; uuyp page not exist if uuyp_id == 0
+    item['uuyp_sell_list'] = []
+    if uuyp_id:
+        uuyp_data = get_uuyp_data(uuyp_id, use_proxy)
+        if uuyp_data:
+            item['uuyp_sell_list'] = [(eval(order['Price']), None, None) for order in uuyp_data['Data']['CommodityList']]
+            logger.success(item['uuyp_sell_list'])
 
     # compute ratio for each platform
     if len(item['buff_sell_list']) and len(item['buy_order_list']) and len(item['sell_order_list']):

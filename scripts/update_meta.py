@@ -10,7 +10,8 @@ from retrying import retry
 
 from database import MongoDB
 from url_formats import (buff_index_json_fmt, c5_search_page_fmt,
-                         igxe_search_page_fmt, steam_item_page_fmt)
+                         igxe_search_page_fmt, steam_item_page_fmt,
+                         uuyp_search_page_fmt)
 from utils import asian_proxies, default_header, random_delay
 
 logger.add('../log/update_meta.log', enqueue=True, rotation='1 MB', backtrace=True, diagnose=True)
@@ -48,6 +49,35 @@ def get_buff_index(page_num:int, game:str):
     assert r.json()['code'] == 'OK', str(r.json())
 
     return r.json()['data']['items']
+
+@retry(stop_max_attempt_number=2, wait_fixed=10000)
+def get_uuyp_id(name:str):
+    data = {
+        "gameId": '730',
+        'keyWords': name,
+        'listSortType': '1',
+        'listType': '10',
+        'pageIndex': 1,
+        'pageSize': 20,
+        'sortType': 0,
+    }
+    r = requests.post(uuyp_search_page_fmt, headers=headers, json=data, timeout=20)
+    assert r.status_code == 200, "Falied to get uuyp id of " + name + " with code: " + str(r.status_code)
+
+    assert r.json()['Code'] == 0, str(r.json())
+
+    if r.json()['Data'] is None:
+        logger.warning("Did not find item {} in UUYP", name)
+        return 0
+
+    for item in r.json()['Data']:
+        if item['CommodityName'] == name:
+            logger.success("Update UUYP id {} for item {}", item['Id'], name)
+            return item['Id']
+    
+    logger.warning("Did not find UUYP id for item {}, candidates: {}", name, [item['CommodityName'] for item in r.json()['Data']])
+    return 0
+
 
 @retry(stop_max_attempt_number=2, wait_fixed=20000)
 def get_market_id(hash_name:str, appid:int):
@@ -152,6 +182,13 @@ def update_once(game:str, appid:int, page_num:int):
         except Exception as e:
             logger.warning("Unable to find c5 id for item {} {}", name, e)
             c5_id = 0
+        
+        uuyp_id = 0
+        if game == 'csgo':
+            try:
+                uuyp_id = get_uuyp_id(name=name)
+            except Exception as e:
+                logger.warning("Unable to find UUYP id for item {} {}", name, e)
 
         # parse item
         item = {
@@ -159,6 +196,7 @@ def update_once(game:str, appid:int, page_num:int):
             'igxe_id' : igxe_id,
             'c5_id' : c5_id,
             'market_id' : market_id,
+            'uuyp_id': uuyp_id,
             'hash_name' : hash_name,
             'short_name': short_name,
             'buff_ratio': buff_ratio,
