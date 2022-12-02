@@ -2,7 +2,7 @@
 
 # SteamTradingSiteTracker
 
-Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 挂刀比例数据
+Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 &  挂刀比例数据
 
 ## 项目信息
 
@@ -12,7 +12,7 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 挂刀比例数
 
 目前 Web 服务器架设在香港，大部分地区可以正常访问。如站点无法连接 (e.g., `ERR_CONNECTION_RESET`)，请更换网络环境后重试。
 
-**24小时持续更新物品比例数据**，受服务器成本限制，目前仅追踪 **BUFF & IGXE & C5** 三个主要平台售价 1 ~ 5000 元，满足特定规则的 **CSGO & DOTA2** 饰品皮肤（具体规则由[数据分析](https://github.com/EricZhu-42/SteamTradingSiteTracker-Data/blob/main/SteamBuffSnapshot/demo.ipynb)得到；列表动态更新，当前约 13000 个）。
+**24小时持续更新物品比例数据**，受服务器成本限制，目前仅追踪 **BUFF & IGXE & C5 & UUYP** 四个主要平台售价 1 ~ 5000 元，满足特定规则的 **CSGO & DOTA2** 饰品皮肤（具体规则由[数据分析](https://github.com/EricZhu-42/SteamTradingSiteTracker-Data/blob/main/SteamBuffSnapshot/demo.ipynb)得到；列表动态更新，当前约 13000 个）。
 
 目前重点物品数据约 1.5h 完整更新一次，后期可能进一步提高更新频率。
 
@@ -65,5 +65,5 @@ Data dumps 将作为 _SteamBuffSnapshot_ 数据集的补充，便于开发者在
 - [x] 支持 DOTA2
 - [x] 支持 IGXE
 - [x] 支持 C5
-- [ ] 支持 悠悠有品
+- [x] 支持 悠悠有品
 
