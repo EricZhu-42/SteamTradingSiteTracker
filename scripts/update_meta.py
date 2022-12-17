@@ -116,7 +116,7 @@ def get_igxe_id(game:str, name:str):
 @retry(stop_max_attempt_number=2, wait_fixed=2000)
 def get_c5_id(game:str, name:str):
 
-    r = requests.get(c5_search_page_fmt.format(name=name, game=game), headers=headers, timeout=20, proxies=asian_proxies) # always use proxy
+    r = requests.get(c5_search_page_fmt.format(name=name, game=game), timeout=20)
     assert r.status_code == 200, "Falied to get c5 id of " + name + " with code: " + str(r.status_code)
 
     c5_id = 0

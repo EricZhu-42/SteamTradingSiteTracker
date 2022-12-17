@@ -2,7 +2,7 @@
 steam_item_page_fmt = r'https://steamcommunity.com/market/listings/{appid:d}/{hash_name:s}'
 buff_index_json_fmt = r'https://buff.163.com/api/market/goods?game={game:s}&page_num={page_num:d}&page_size=80&min_price=1&max_price=5000&sort_by=price.asc'
 igxe_search_page_fmt = r'https://www.igxe.cn/market/{game:s}?keyword={name:s}'
-c5_search_page_fmt = r'https://www.c5game.com/{game:s}?keyword={name:s}'
+c5_search_page_fmt = r'https://www.c5game.com/{game:s}?marketKeyword={name:s}'
 uuyp_search_page_fmt = r'https://api.youpin898.com/api/homepage/es/template/GetCsGoPagedList'
 
 # ==== data ====
