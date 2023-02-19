@@ -2,7 +2,7 @@
 
 # SteamTradingSiteTracker
 
-Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 &  挂刀比例数据
+Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀比例数据
 
 ## 项目信息
 
