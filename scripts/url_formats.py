@@ -11,5 +11,5 @@ order_json_fmt = r'https://steamcommunity.com/market/itemordershistogram?country
 volume_json_fmt = r'https://steamcommunity.com/market/priceoverview/?appid={appid:d}&currency=23&market_hash_name={hash_name:s}'
 buff_json_fmt = r'https://buff.163.com/api/market/goods/sell_order?game={game:s}&goods_id={buff_id:d}'
 igxe_json_fmt = r'https://www.igxe.cn/product/trade/{appid:d}/{igxe_id:d}'
-c5_json_fmt = r'https://www.c5game.com/gw/steamtrade/sga/sell/v1/list?itemId={c5_id:d}'
+c5_json_fmt = r"https://www.c5game.com/napi/trade/steamtrade/sga/sell/v3/list?itemId={c5_id:d}"
 uuyp_json_fmt = r'https://api.youpin898.com/api/homepage/es/commodity/GetCsGoPagedList'
