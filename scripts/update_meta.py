@@ -31,8 +31,14 @@ with open('./secrets/c5_cookie.txt', 'r', encoding='utf-8') as f:
     c5_cookie = f.read().strip()
     assert 'C5Login' in c5_cookie
 
+# load UUYP cookie
+with open("./secrets/uuyp_cookie.txt", "r", encoding="utf-8") as f:
+    uuyp_cookie = f.read().strip()
+    assert "Bearer" in uuyp_cookie
+
 headers = default_header.copy()
 headers['Cookie'] = buff_cookie + ';' + c5_cookie
+headers['authorization'] = uuyp_cookie
 
 game_info = [
     {'game': 'csgo',  'appid':730},
@@ -71,11 +77,11 @@ def get_uuyp_id(name:str):
         return 0
 
     for item in r.json()['Data']:
-        if item['CommodityName'] == name:
+        if item['CommodityName'].strip() == name.strip():
             logger.success("Update UUYP id {} for item {}", item['Id'], name)
             return item['Id']
     
-    logger.warning("Did not find UUYP id for item {}, candidates: {}", name, [item['CommodityName'] for item in r.json()['Data']])
+    logger.warning("Did not find UUYP id for item {}, candidates: {}", name, [item['CommodityName'].strip() for item in r.json()['Data']])
     return 0
 
 
