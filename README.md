@@ -4,6 +4,10 @@
 
 Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀比例数据
 
+## 更新公告
+
+**服务器将于近 1~2 天进行架构升级，期间服务可能暂时无法使用，请谅解。**
+
 ## 项目信息
 
 :star: **站点访问地址：[https://www.iflow.work/](https://www.iflow.work/)** :star:
