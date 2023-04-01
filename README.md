@@ -6,13 +6,11 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 
 ## 更新公告
 
-**服务器将于近 1~2 天进行架构升级，期间服务可能暂时无法使用，请谅解。**
+**近期将上传重构后的后端代码，并更新本页面的部分信息。详见：[项目主页与更新说明](https://www.wolai.com/eZZ1UwWEM9Hawro3cXZjVq)**
 
 ## 项目信息
 
 :star: **站点访问地址：[https://www.iflow.work/](https://www.iflow.work/)** :star:
-
-该项目的其他信息可参考 Keylol 社区页面：https://keylol.com/forum.php?mod=viewthread&tid=788489 。
 
 目前 Web 服务器架设在香港，大部分地区可以正常访问。如站点无法连接 (e.g., `ERR_CONNECTION_RESET`)，请更换网络环境后重试。
 
@@ -21,6 +19,10 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 目前重点物品数据约 1.5h 完整更新一次，后期可能进一步提高更新频率。
 
 为了服务器的正常运行，请不要在短时间内连续访问站点。
+
+## 项目架构
+
+![Framework](./framework.png)
 
 ## 代码
 
