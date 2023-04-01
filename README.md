@@ -6,7 +6,11 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 
 ## 更新公告
 
-**近期将上传重构后的后端代码，并更新本页面的部分信息。详见：[项目主页与更新说明](https://www.wolai.com/eZZ1UwWEM9Hawro3cXZjVq)**
+**近期将上传重构后的后端代码，并更新本页面的部分信息。详见：[项目主页与更新说明](https://www.wolai.com/eZZ1UwWEM9Hawro3cXZjVq)**。
+
+我们正在寻求 IP 池或代理隧道（主要访问 [steamcommunity.com](steamcommunity.com)）相关的资源赞助。如果您有兴趣与我们合作，请联系：zhuxinhao00@gmail.com
+
+We are seeking **sponsorship** for **IP pool** or **proxy tunnel** (mainly accessing [steamcommunity.com](steamcommunity.com)). If you are interested in cooperating with us, please contact: zhuxinhao00@gmail.com.
 
 ## 项目信息
 
