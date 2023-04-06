@@ -14,9 +14,9 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 
 ## 项目信息
 
-:star: **站点访问地址：[https://www.iflow.work/](https://www.iflow.work/)** :star:（香港服务器，无法访问时请尝试切换网络环境）
+:star: **站点访问地址：[https://www.iflow.work/](https://www.iflow.work/)** :star:（服务器位于香港，部分网络环境下可能无法正常访问）
 
-**24小时持续更新物品比例数据**，目前追踪 **BUFF & IGXE & C5 & UUYP** 四个主要平台售价大于 1 元，满足特定筛选规则的 **CSGO & DOTA2** 饰品皮肤（具体规则由[数据分析](https://github.com/EricZhu-42/SteamTradingSiteTracker-Data/blob/main/SteamBuffSnapshot/demo.ipynb)得到；列表动态更新，当前约 16000 个）。
+**24小时持续更新饰品比例数据及走势**，目前追踪 **BUFF & IGXE & C5 & UUYP** 四个主要平台售价大于 1 元，满足特定筛选规则的 **CSGO & DOTA2** 饰品皮肤（具体规则由[数据分析](https://github.com/EricZhu-42/SteamTradingSiteTracker-Data/blob/main/SteamBuffSnapshot/demo.ipynb)得到）。列表动态更新，当前饰品数约 16000 个。
 
 目前重点物品数据约 **40min** 更新一次。
 
@@ -30,6 +30,12 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 
 - [DataDumps](https://github.com/EricZhu-42/SteamTradingSiteTracker-Data/tree/main/DataDumps)：2022/04/25 ~ 当天 7 天前的 DATA 数据库完整存档
 - [SteamBuffSnapshot](https://github.com/EricZhu-42/SteamTradingSiteTracker-Data/tree/main/SteamBuffSnapshot)：2022/02/14 期间，BUFF 平台 dota2 与 csgo 所有饰品的价格数据，及对应的 Steam Market 数据；还包含一个基于历史数据，获取低比例饰品池筛选规则的 python demo
+
+## 移动端 APP
+
+站点 APP 端（微信小程序）由 [@lazycce](https://github.com/lazycce) 开发维护，详见：[SteamTradingSiteTracker-APP](https://github.com/lazycce/SteamTradingSiteTracker-APP)
+
+APP 端与网页端数据同步，可以在各种网络环境下正常访问
 
 ## 其他信息
 
