@@ -4,13 +4,17 @@
 
 Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀比例数据
 
-## 更新公告
+## 分支信息
 
-**近期将上传重构后的后端代码，并更新本页面的部分信息。详见：[项目主页与更新说明](https://www.wolai.com/eZZ1UwWEM9Hawro3cXZjVq)**。
+该 branch 为 SteamTradingSiteTracker 于 **2021/10/11 ~ 2023/03/31** 间使用的 Steam 饰品数据爬虫代码。
 
-我们正在寻求 IP 池或代理隧道（主要访问 [steamcommunity.com](steamcommunity.com)）相关的资源赞助。如果您有兴趣与我们合作，请联系：zhuxinhao00@gmail.com
+该版本通过**多进程**实现高效的并行爬虫，仅需配置 MongoDB 即可使用，运行稳定，适合计算资源充裕，对更新速度要求较低的情况。
 
-We are seeking **sponsorship** for **IP pool** or **proxy tunnel** (mainly accessing [steamcommunity.com](steamcommunity.com)). If you are interested in cooperating with us, please contact: zhuxinhao00@gmail.com.
+自 2023/04/01 起，[main](https://github.com/EricZhu-42/SteamTradingSiteTracker) 分支换用**异步**请求代码，旧版本切换至 [sync](https://github.com/EricZhu-42/SteamTradingSiteTracker/tree/sync) 分支，不保证后续的积极维护。
+
+该分支代码的运行方式可以参考：[Issue 19](https://github.com/EricZhu-42/SteamTradingSiteTracker/issues/19)
+
+> **以下为旧版本的 README 内容，仅供参考**
 
 ## 项目信息
 
@@ -23,10 +27,6 @@ We are seeking **sponsorship** for **IP pool** or **proxy tunnel** (mainly acces
 目前重点物品数据约 1.5h 完整更新一次，后期可能进一步提高更新频率。
 
 为了服务器的正常运行，请不要在短时间内连续访问站点。
-
-## 项目架构
-
-![Framework](./framework.png)
 
 ## 代码
 
