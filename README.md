@@ -41,6 +41,4 @@ APP 端与网页端数据同步，可以在各种网络环境下正常访问
 
 更新日志、开发计划等其他信息请参考我们的 [项目主页](https://www.wolai.com/eZZ1UwWEM9Hawro3cXZjVq)
 
-此外，我们正在寻求 **IP 池**或**代理隧道**（主要访问 [steamcommunity.com](steamcommunity.com)）相关的资源赞助。如果您有兴趣与我们合作，请联系：zhuxinhao00@gmail.com
-
-We are seeking **sponsorship** for **IP pool** or **proxy tunnel** (mainly accessing [steamcommunity.com](steamcommunity.com)). If you are interested in cooperating with us, please contact: zhuxinhao00@gmail.com.
+推荐适合爬虫业务的[**优质代理 IP 池**](https://www.3ip.cn?sid=31556)，按量付费套餐低至 0.0015 元/IP，新用户免费领取测试额度。
