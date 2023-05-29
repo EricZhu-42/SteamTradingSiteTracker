@@ -6,7 +6,7 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 
 ## 近期站点情况说明
 
-:warning: **5月26日至29日期间，iflow.work 多次受到 DDoS 攻击，因此我们将站点流量迁移到了 Cloudflare，并更换了服务器 IP** :warning:
+**5月 26 日至 29 日期间，iflow.work 多次受到 DDoS 攻击，因此我们将站点流量迁移到了 Cloudflare，并更换了服务器 IP**
 
 这可能影响站点在境内部分地区的可达性，详情请见：[站点主页说明](https://www.wolai.com/eZZ1UwWEM9Hawro3cXZjVq)
 
