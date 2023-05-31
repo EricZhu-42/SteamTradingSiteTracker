@@ -8,7 +8,7 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 
 **5月 26 日至 29 日期间，iflow.work 多次受到 DDoS 攻击，因此我们将站点流量迁移到了 Cloudflare，并更换了服务器 IP**
 
-这可能影响站点在境内部分地区的可达性，详情请见：[站点主页说明](https://www.wolai.com/eZZ1UwWEM9Hawro3cXZjVq)
+这可能影响站点在境内部分地区的可达性，详情请见：[站点主页说明](https://flowus.cn/share/139253e9-cd71-43c7-9619-b23e6ba14dc1)
 
 ## 更新及分支公告
 
@@ -45,6 +45,6 @@ APP 端与网页端数据同步，可以在各种网络环境下正常访问
 
 ## 其他信息
 
-更新日志、开发计划等其他信息请参考我们的 [项目主页](https://www.wolai.com/eZZ1UwWEM9Hawro3cXZjVq)
+更新日志、开发计划等其他信息请参考我们的 [项目主页](https://flowus.cn/share/139253e9-cd71-43c7-9619-b23e6ba14dc1)
 
 推荐适合爬虫业务的[**优质代理 IP 池**](https://www.3ip.cn?sid=31556)，按量付费套餐低至 0.0015 元/IP，新用户免费领取测试额度。
