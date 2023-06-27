@@ -4,17 +4,16 @@
 
 Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀比例数据
 
-## 活动通知
+## 新版 UI 发布公告
+:tada: 由 [@Lazycce](https://github.com/lazycce) 开发的站点新版 UI 已经上线测试，访问地址：[**steam.iflow.work**](https://steam.iflow.work)
+
+**近期将对新版 UI 进行进一步的优化**，期间可能短时间出现服务无法使用的情况，请谅解。
+
+与 UI 相关的意见或建议请通过 [Issue](https://github.com/EricZhu-42/SteamTradingSiteTracker/issues) 反馈。
+
+## 活动公告
 
 **2023 年 Steam 夏季特卖预计于6月29日开始。** 6月22日 ~ 7月6日期间，站点将临时启用双倍更新速率。
-
-## 更新及分支公告
-
-为提高数据的更新频率，自 2023/04/01 起，站点使用新的技术架构，同时主分支开始维护新版本代码。
-
-原先版本的代码（通过多进程实现并行爬虫，仅需配置 MongoDB，运行更稳定）将切换至 [sync](https://github.com/EricZhu-42/SteamTradingSiteTracker/tree/sync) 分支维护。
-
-新版本代码的使用文档将于后期更新。
 
 ## 项目信息
 
@@ -37,7 +36,7 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 
 ## 移动端 APP
 
-站点 APP 端（微信小程序）由 [@lazycce](https://github.com/lazycce) 开发维护，详见：[SteamTradingSiteTracker-APP](https://github.com/lazycce/SteamTradingSiteTracker-APP)
+站点 APP 端（微信小程序）由 [@Lazycce](https://github.com/lazycce) 开发维护，详见：[SteamTradingSiteTracker-APP](https://github.com/lazycce/SteamTradingSiteTracker-APP)
 
 APP 端与网页端数据同步，可以在各种网络环境下正常访问
 
