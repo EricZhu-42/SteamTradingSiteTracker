@@ -4,6 +4,12 @@
 
 Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀比例数据
 
+## 站点监控面板上线公告
+
+我们部署了基于 Grafana 的**站点状态监控面板**，访问地址：**[monitor.iflow.work](https://monitor.iflow.work/)**
+
+我们公开站点的监控数据，既是为了让普通用户能够更直观地了解站点饰品数据的更新速度及过程，也是希望感兴趣的开发者能够参考 iflow.work 的运行数据，设计更高效的 Steam 饰品价格数据监测系统。
+
 ## 新版 UI 发布公告
 :tada: 由 [@Lazycce](https://github.com/lazycce) 开发的站点新版 UI 已经上线测试，访问地址：[**steam.iflow.work**](https://steam.iflow.work)
 
