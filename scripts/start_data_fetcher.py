@@ -104,6 +104,7 @@ async def fetch_c5(task_id, task, proxy, session, index=0):
         async with session.get(
             c5_json_fmt.format(c5_id=c5_id),
             proxy=f"http://{proxy}",
+            headers={"platform": "2"},
             timeout=TIMEOUT,
         ) as resp:
             assert resp.status in [200, 404]
