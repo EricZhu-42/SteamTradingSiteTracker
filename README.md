@@ -4,6 +4,8 @@
 
 Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀比例数据
 
+> For a description of this project in English, please refer to [project wiki](https://github.com/EricZhu-42/SteamTradingSiteTracker/wiki)
+
 ## 站点监控面板上线公告
 
 我们部署了基于 Grafana 的**站点状态监控面板**，访问地址：**[monitor.iflow.work](https://monitor.iflow.work/)**
