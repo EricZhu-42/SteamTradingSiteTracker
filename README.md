@@ -6,6 +6,10 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 
 > For a description of this project in English, please refer to the [project wiki](https://github.com/EricZhu-42/SteamTradingSiteTracker/wiki)
 
+## 活动公告
+
+**2023 年 Steam 秋季特卖将于 11 月 21 日 ~ 28 日期间进行。秋促期间，站点将临时启用双倍更新速率**
+
 ## 站点监控面板上线公告
 
 我们部署了基于 Grafana 的**站点状态监控面板**，访问地址：**[monitor.iflow.work](https://monitor.iflow.work/)**
@@ -18,10 +22,6 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 **近期将对新版 UI 进行进一步的优化**，期间可能短时间出现服务无法使用的情况，请谅解。
 
 与 UI 相关的意见或建议请通过 [Issue](https://github.com/EricZhu-42/SteamTradingSiteTracker/issues) 反馈。
-
-## 活动公告
-
-~~2023 年 Steam 夏季特卖已于6月29日开始。夏促期间，站点将临时启用双倍更新速率~~ 
 
 ## 项目信息
 
