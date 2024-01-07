@@ -6,9 +6,11 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 
 > For a description of this project in English, please refer to the [project wiki](https://github.com/EricZhu-42/SteamTradingSiteTracker/wiki)
 
-## 活动公告
+## 更新计划：2024/01
 
-**2023 年 Steam 秋季特卖将于 11 月 21 日 ~ 28 日期间进行。秋促期间，站点将临时启用双倍更新速率**
+我们正在尝试构造一个多平台的 CSGO & DOTA2 **饰品 ID 对齐数据库**（类似于该 [repo](https://github.com/ModestSerhat/buff163-ids)），便于后续对比同一饰品在多个平台的价格。但是，BUFF 的搜索接口有较严格的反爬限制，我们已有账号被封禁，[iflow.work](https://iflow.work) 的 BUFF 元数据也因此暂时停止更新。如果有拥有相关经验或资源的开发者乐意帮助，欢迎与我们[取得联系](mailto:zhuxinhao00@gmail.com)。
+
+We are trying to build a multi-platform CSGO & DOTA2 **skin ID alignment database** (similar to [this repo](https://github.com/ModestSerhat/buff163-ids)), to facilitate comparisons of item's price across multiple platforms. However, BUFF employs strict anti-spider restrictions to its "search item by name" API, and we have had accounts banned. As a result, the BUFF metadata on [iflow.work](https://iflow.work) has temporarily stopped updating. If there are developers with relevant experience or resources who are willing to help, please [contact us](mailto:zhuxinhao00@gmail.com).
 
 ## 站点监控面板上线公告
 
