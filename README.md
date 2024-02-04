@@ -6,6 +6,12 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 
 > For a description of this project in English, please refer to the [project wiki](https://github.com/EricZhu-42/SteamTradingSiteTracker/wiki)
 
+# 饰品 ID 映射表
+
+我们发布了一份 DOTA2 & CS2 饰品在 Steam Market 与第三方交易平台的 ID 对照表：[SteamTradingSite-ID-Mapper](https://github.com/EricZhu-42/SteamTradingSite-ID-Mapper).
+
+We are glad to release an ID mapping for DOTA2 & CS2 tradeable items between the Steam Market and major trading platforms: [SteamTradingSite-ID-Mapper](https://github.com/EricZhu-42/SteamTradingSite-ID-Mapper).
+
 ## 站点监控面板上线公告
 
 我们部署了基于 Grafana 的**站点状态监控面板**，访问地址：**[monitor.iflow.work](https://monitor.iflow.work/)**
