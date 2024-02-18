@@ -6,6 +6,12 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 
 > For a description of this project in English, please refer to the [project wiki](https://github.com/EricZhu-42/SteamTradingSiteTracker/wiki)
 
+## 更新公告
+
+我们发布了 2024 年 2 月的[更新公告](https://flowus.cn/share/139253e9-cd71-43c7-9619-b23e6ba14dc1)。
+
+此外，2/18 至 3/15 期间，我们的[饰品数据 API](https://flowus.cn/share/6fbcab3d-4e7b-42c5-9a8c-918f9ce90b5e) 进行限时免费测试。
+
 ## 饰品 ID 映射表
 
 我们发布了一份 DOTA2 & CS2 饰品在 Steam Market 与第三方交易平台的 ID 对照表：[SteamTradingSite-ID-Mapper](https://github.com/EricZhu-42/SteamTradingSite-ID-Mapper).
