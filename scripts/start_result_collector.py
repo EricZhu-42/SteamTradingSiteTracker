@@ -1,5 +1,5 @@
 import time
-
+import re
 import numpy as np
 from database import MongoDB, TaskList
 from loguru import logger
@@ -128,6 +128,8 @@ def collect(buff_id, results):
                 item["{p}_safe_price".format(p=platform)] = 9999999
 
         # parse steam
+        match = re.search(r"\d+(\.\d+)?", results["volume_data"].get("median_price", "None"))
+        latest_transaction_price_raw = float(match.group()) if match else None
         safe_buy_list = [price for price, num in item["buy_order_list"] if num >= 3]
         safe_buy_price_raw = (
             safe_buy_list[0] if len(safe_buy_list) else item["buy_order_list"][-1][0]
@@ -135,6 +137,8 @@ def collect(buff_id, results):
         optimal_buy_price_raw = item["buy_order_list"][0][0]
         optimal_sell_price_raw = item["sell_order_list"][0][0]
 
+        item["optimal_transaction_price"] = calculate_after_fee(latest_transaction_price_raw)
+        item["safe_transaction_price"] = item["optimal_transaction_price"]
         item["optimal_buy_price"] = calculate_after_fee(optimal_buy_price_raw)
         item["safe_buy_price"] = calculate_after_fee(safe_buy_price_raw)
         item["optimal_sell_price"] = calculate_after_fee(optimal_sell_price_raw)
@@ -143,7 +147,7 @@ def collect(buff_id, results):
 
         # compute ratio
         for safe in ["optimal", "safe"]:
-            for mode in ["buy", "sell"]:
+            for mode in ["buy", "sell", "transaction"]:
                 for platform in platforms:
                     item["{p}_{s}_{m}_ratio".format(p=platform, s=safe, m=mode)] = (
                         item["{p}_{s}_price".format(p=platform, s=safe)]
@@ -156,10 +160,13 @@ def collect(buff_id, results):
         optimal_sell_ratio = min(
             item["{p}_optimal_sell_ratio".format(p=platform)] for platform in platforms
         )
+        optimal_transaction_ratio = min(
+            item["{p}_optimal_transaction_ratio".format(p=platform)] for platform in platforms
+        )
 
         # assign update priority
-        item["weighted_ratio"] = optimal_buy_ratio * 0.6 + optimal_sell_ratio * 0.4
-
+        item["weighted_ratio"] = optimal_buy_ratio * 0.4 + optimal_sell_ratio * 0.2 + optimal_transaction_ratio * 0.4
+        # PS: I think the latest transaction price is the most informative :)
     else:
         # get an empty sell/buy list, ignore unpopular items
         if item["count_in_24"] > 10:  # it is popular! what happened?
