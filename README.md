@@ -9,6 +9,7 @@ Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀�
 ## 更新公告
 
 [2024/04/03] 新增了 “近期成交” 比例的显示功能，表示以 Steam Market 24 小时内交易价格中位数的价格卖出后的挂刀比例，详见：[#48](https://github.com/EricZhu-42/SteamTradingSiteTracker/issues/48)
+
 [2024/02/18] 我们的 [饰品数据 API](https://flowus.cn/share/6fbcab3d-4e7b-42c5-9a8c-918f9ce90b5e) 正式发布
 
 ## 饰品 ID 映射表
