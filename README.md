@@ -2,7 +2,7 @@
 
 # SteamTradingSiteTracker
 
-Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP 挂刀比例数据
+Steam 挂刀行情站 —— 全天候更新的 BUFF & IGXE & C5 & UUYP & ECO 挂刀比例数据
 
 > For a description of this project in English, please refer to the [project wiki](https://github.com/EricZhu-42/SteamTradingSiteTracker/wiki)
 
@@ -26,7 +26,7 @@ We are glad to release an ID mapping for DOTA2 & CS2 tradeable items between the
 
 :star: **站点访问地址：[https://www.iflow.work/](https://www.iflow.work/)** :star:（基于 Cloudflare CDN，部分网络环境下可能无法正常访问）
 
-**24小时持续更新饰品比例数据及走势**，目前追踪 **BUFF & IGXE & C5 & UUYP** 四个主要平台所有 **CSGO & DOTA2** 饰品（共约 64000 个），并基于特定筛选规则（具体规则由[数据分析](https://github.com/EricZhu-42/SteamTradingSiteTracker-Data/blob/main/SteamBuffSnapshot/demo.ipynb)得到）维护设定饰品更新优先级，目前重点饰品数据约 **10 min** 更新一次。
+**24小时持续更新饰品比例数据及走势**，目前追踪 **BUFF & IGXE & C5 & UUYP & ECO** 五个平台所有 **CSGO & DOTA2** 饰品（共约 64000 个），并基于特定筛选规则（具体规则由[数据分析](https://github.com/EricZhu-42/SteamTradingSiteTracker-Data/blob/main/SteamBuffSnapshot/demo.ipynb)得到）维护设定饰品更新优先级，目前重点饰品数据约 **10 min** 更新一次。
 
 ## 项目架构
 
